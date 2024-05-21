@@ -12,7 +12,7 @@ export default defineConfig({
       '/api-banks': {
         target: 'https://dev.obtenmas.com',
         changeOrigin: true,
-        secure: false,
+        secure: true,
         rewrite: (path) => path.replace(/^\/api-banks/, ''),
       },
     },

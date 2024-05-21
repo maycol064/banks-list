@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/api-banks/*"
+  to = "https://dev.obtenmas.com/:splat"
+  status = 200
