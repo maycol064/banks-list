@@ -17,7 +17,7 @@ The project was maked with:
 
 
 ## Installation
-1. Clone repository: 
+1. [Clone the repository](https://github.com/maycol064/banks-list)
 2. Browse to the folder
 3. Execute `npm install` for install dependencies
 4. Execute `npm run dev` for start the project in the development mode 
@@ -27,4 +27,4 @@ The project was maked with:
 In the project folder, execute `npm run test` for run the tests
 
 ## Production
-The production mode can you visit on: 
+The production mode can you visit [here](https://main--banklistest.netlify.app/)

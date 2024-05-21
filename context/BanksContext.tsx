@@ -16,18 +16,20 @@ export const BanksProvider = ({ children }: PropsProvider) => {
 
   useEffect(() => {
     const recoverBanks = localStorage.getItem('listBanks');
-
     if (recoverBanks) {
       setBanks(JSON.parse(recoverBanks));
     } else {
-      getBanksList().then((response) => {
-        if (response.status === 200) {
-          setBanks(response.data);
-          localStorage.setItem('listBanks', JSON.stringify(response.data));
-        } else {
+      getBanksList()
+        .then((response) => {
+          if (response.status === 200) {
+            setBanks(response.data);
+            localStorage.setItem('listBanks', JSON.stringify(response.data));
+          }
+        })
+        .catch((error) => {
+          console.log(error);
           setError(true);
-        }
-      });
+        });
     }
   }, []);
 
