@@ -7,7 +7,15 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
+    cors: false,
+    proxy: {
+      '/api-banks': {
+        target: 'https://dev.obtenmas.com',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api-banks/, ''),
+      },
+    },
   },
   test: {
     environment: 'jsdom',
@@ -15,8 +23,5 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-  },
-  preview: {
-    port: 3000,
   },
 });
