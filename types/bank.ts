@@ -8,4 +8,5 @@ export type Bank = {
 export type BanksContextType = {
   banksList: Array<Bank>;
   error: boolean;
+  loading: boolean;
 };

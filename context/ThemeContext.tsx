@@ -11,7 +11,7 @@ interface PropsProvider {
 }
 
 export const ThemeProvider = ({ children }: PropsProvider) => {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark');
 
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
