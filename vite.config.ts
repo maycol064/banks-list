@@ -17,6 +17,17 @@ export default defineConfig({
       },
     },
   },
+  preview: {
+    cors: false,
+    proxy: {
+      '/api-banks': {
+        target: 'https://dev.obtenmas.com',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/api-banks/, ''),
+      },
+    },
+  },
   test: {
     environment: 'jsdom',
     setupFiles: '/test/setup.ts',
